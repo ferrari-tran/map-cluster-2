@@ -7,6 +7,7 @@ import {
   clusterLayer,
   clusterCountLayer,
   unclusteredPointLayer,
+  unclusteredLabelLayer,
 } from "../layers";
 
 const MAPBOX_TOKEN =
@@ -55,9 +56,11 @@ export default function Mapbox({ data }) {
           cluster={true}
           clusterMaxZoom={14}
           clusterRadius={50}
+          clusterProperties={{ label: ["get", "name", ["properties"]] }}
         >
           <Layer {...clusterLayer} />
           <Layer {...clusterCountLayer} />
+          <Layer {...unclusteredLabelLayer} />
           <Layer {...unclusteredPointLayer} />
         </Source>
       </Map>

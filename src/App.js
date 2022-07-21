@@ -15,8 +15,7 @@ function convertDataToGeoJSON(data) {
       type: "Feature",
       properties: {
         id: location.poi_id,
-        name: location.name,
-        mag: 1.42,
+        name: location.name
       },
       geometry: { type: "Point", coordinates: [location.lon, location.lat] },
     };
