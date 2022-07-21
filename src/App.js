@@ -15,9 +15,10 @@ function convertDataToGeoJSON(data) {
       type: "Feature",
       properties: {
         id: location.poi_id,
-        name: location.name
+        name: location.name,
+        mag: 1.42,
       },
-      geometry: { type: "Point", coordinates: [location.lat, location.lon] },
+      geometry: { type: "Point", coordinates: [location.lon, location.lat] },
     };
   });
 
