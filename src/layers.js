@@ -40,7 +40,10 @@ export const unclusteredLabelLayer = {
   source: 'locations',
   filter: ['!', ['has', 'point_count']],
   layout: {
-    'text-field': 'label_here',
+    'text-field': [
+      'format',
+      ['upcase', ['get', 'name']]
+    ],
     'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
     'text-size': 12
   },
